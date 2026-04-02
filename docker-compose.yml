@@ -1,0 +1,12 @@
+services:
+  parser:
+    build: .
+    container_name: vacancy_parser_app
+    env_file:
+      - .env
+    restart: on-failure
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "3"
